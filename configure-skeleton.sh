@@ -64,7 +64,7 @@ for file in $files ; do
     | sed "s/:author_email/$author_email/g" \
     | sed "s/:vendor_name/$vendor_name_lowercase/g" \
     | sed "s/:package_name/$package_name/g" \
-    | sed "s/Spatie/$vendor_name/g" \
+    | sed "s/Devhour/$vendor_name/g" \
     | sed "s/_skeleton_/$package_name_underscore/g" \
     | sed "s/skeleton/$package_name/g" \
     | sed "s/Skeleton/$class_name/g" \
