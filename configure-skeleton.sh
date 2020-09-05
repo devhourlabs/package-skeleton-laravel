@@ -32,6 +32,7 @@ current_directory=$(pwd)
 folder_name=$(basename "$current_directory")
 
 vendor_name_unsanitized=$(ask_question "Vendor name" "devhour")
+vendor_username=$(ask_question "Vendor username" "$vendor_name_unsanitized")
 package_name=$(ask_question "Package name" "$folder_name")
 package_description=$(ask_question "Package description" "")
 
@@ -63,6 +64,7 @@ for file in $files ; do
     | sed "s/:author_username/$author_username/g" \
     | sed "s/:author_email/$author_email/g" \
     | sed "s/:vendor_name/$vendor_name_lowercase/g" \
+    | sed "s/:vendor_username/$vendor_username/g" \
     | sed "s/:package_name/$package_name/g" \
     | sed "s/Devhour/$vendor_name/g" \
     | sed "s/_skeleton_/$package_name_underscore/g" \
